@@ -6,15 +6,15 @@ public class ARCubeInteraction : MonoBehaviour
 {
     private ManoGestureContinuous grab;
     private ManoGestureContinuous pinch;
-    private ManoGestureTrigger click;
+    private ManoGestureTrigger    click;
 
     [SerializeField]
     private Material[] arCubeMaterial;
-    [SerializeField]
-    private GameObject smallCube;
+    // [SerializeField]
+    // private GameObject smallCube;
 
-    private string handTag = "Player";
     private Renderer cubeRenderer;
+    private string handTag = "Player";
 
     private float skeletonConfidenceThreshold = 0.0001f;
 
@@ -42,61 +42,16 @@ public class ARCubeInteraction : MonoBehaviour
     }
 
     /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="other">The collider that stays</param>
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == handTag)
-        {
-            cubeRenderer.sharedMaterial = arCubeMaterial[1];
-        }
-
-        //MoveWhenGrab(other);
-        RotateWhenHolding(other);
-        SpawnWhenClicking(other);
-    }
-
-    /// <summary>
-    /// If grab is performed while hand collider is in the cube.
-    /// The cube will follow the hand.
-    /// </summary>
-    private void MoveWhenGrab(Collider other)
-    {
-        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == grab)
-        {
-            transform.parent = other.gameObject.transform;
-        }
-
-        else
-        {
-            transform.parent = null;
-        }
-    }
-
-    /// <summary>
-    /// If pinch is performed while hand collider is in the cube.
-    /// The cube will start rotate.
-    /// </summary>
-    private void RotateWhenHolding(Collider other)
-    {
-        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == pinch)
-        {
-            transform.Rotate(Vector3.up * Time.deltaTime * 50, Space.World);
-        }
-    }
-
-    /// <summary>
     /// If pick is performed while hand collider is in the cube.
     /// The cube will follow the hand.
     /// </summary>
-    private void SpawnWhenClicking(Collider other)
-    {
-        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_trigger == click)
-        {
-            Instantiate(smallCube, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 1.5f, transform.position.z), Quaternion.identity);
-        }
-    }
+    // private void SpawnWhenClicking(Collider other)
+    // {
+    //     if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_trigger == click)
+    //     {
+    //         Instantiate(smallCube, new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 1.5f, transform.position.z), Quaternion.identity);
+    //     }
+    // }
 
     /// <summary>
     /// Vibrate when hand collider enters the cube.
@@ -112,6 +67,22 @@ public class ARCubeInteraction : MonoBehaviour
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other">The collider that stays</param>
+    // private void OnTriggerStay(Collider other)
+    // {
+    //     if (other.gameObject.tag == handTag)
+    //     {
+    //         cubeRenderer.sharedMaterial = arCubeMaterial[1];
+    //     }
+
+    //     //MoveWhenGrab(other);
+    //     RotateWhenHolding(other);
+    //     SpawnWhenClicking(other);
+    // }
+
+    /// <summary>
     /// Change material when exit the cube
     /// </summary>
     /// <param name="other">The collider that exits</param>
@@ -119,4 +90,21 @@ public class ARCubeInteraction : MonoBehaviour
     {
         cubeRenderer.sharedMaterial = arCubeMaterial[0];
     }
+
+    /// <summary>
+    /// If grab is performed while hand collider is in the cube.
+    /// The cube will follow the hand.
+    /// </summary>
+    // private void MoveWhenGrab(Collider other)
+    // {
+    //     if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == grab)
+    //     {
+    //         transform.parent = other.gameObject.transform;
+    //     }
+
+    //     else
+    //     {
+    //         transform.parent = null;
+    //     }
+    // }
 }
