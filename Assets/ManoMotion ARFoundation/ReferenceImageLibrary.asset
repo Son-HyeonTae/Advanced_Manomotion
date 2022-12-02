@@ -18,11 +18,11 @@ MonoBehaviour:
     m_Storage: []
   m_Images:
   - m_SerializedGuid:
-      m_GuidLow: 5095227635989578473
-      m_GuidHigh: 2723563545263631535
+      m_GuidLow: 5312129809993965979
+      m_GuidHigh: 1459081793016082100
     m_SerializedTextureGuid:
-      m_GuidLow: 16511438155709755963
-      m_GuidHigh: 6899182762684075577
+      m_GuidLow: 4369839699504777876
+      m_GuidHigh: 14948036671518488632
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Campus_Map

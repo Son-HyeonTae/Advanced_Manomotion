@@ -10,8 +10,10 @@ public class ARCubeInteraction : MonoBehaviour
 
     [SerializeField]
     private Material[] arCubeMaterial;
-    // [SerializeField]
-    // private GameObject smallCube;
+    [SerializeField]
+    private GameObject map;
+    [SerializeField]
+    private int        plateNum;
 
     private Renderer cubeRenderer;
     private string handTag = "Player";
@@ -63,6 +65,7 @@ public class ARCubeInteraction : MonoBehaviour
         {
             cubeRenderer.sharedMaterial = arCubeMaterial[1];
             Handheld.Vibrate();
+            map.GetComponent<PlateControl>().ChangePlate(plateNum);
         }
     }
 

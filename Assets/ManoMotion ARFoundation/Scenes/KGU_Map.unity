@@ -3310,6 +3310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489481005}
   - component: {fileID: 489481004}
+  - component: {fileID: 489481006}
   m_Layer: 0
   m_Name: SkeletonManager
   m_TagString: Untagged
@@ -3355,6 +3356,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &489481006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489481003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee5f5898892e7d4c9a906160d1e870f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &500425056
 GameObject:
   m_ObjectHideFlags: 0
@@ -9353,6 +9366,7 @@ GameObject:
   - component: {fileID: 1509354415}
   - component: {fileID: 1509354414}
   - component: {fileID: 1509354413}
+  - component: {fileID: 1509354417}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -9467,6 +9481,23 @@ Transform:
   m_Father: {fileID: 203539643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509354417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509354411}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15f82cc229284894964d2d30806969d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HumanSegmentationStencilMode: 3
+  m_HumanSegmentationDepthMode: 2
+  m_EnvironmentDepthMode: 3
+  m_EnvironmentDepthTemporalSmoothing: 1
+  m_OcclusionPreferenceMode: 1
 --- !u!1 &1517183679
 GameObject:
   m_ObjectHideFlags: 0
